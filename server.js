@@ -8,7 +8,11 @@ dotenv.config();
 
 const app = express();
 
+app.use(express.static("public"));
+app.use(express.json())
+
 app.use("/api/products", productRouter);
+
 
 
 const PORT = process.env.PORT || 5000;

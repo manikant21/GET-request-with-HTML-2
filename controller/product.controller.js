@@ -8,4 +8,14 @@ const getProducts = (req, res) => {
     res.status(200).sendFile(path.join(__dirname, ".." , "view", "product.view.html"));
 }
 
-export {getProducts};
+const postProduct = (req,res) => {
+    const data = req.body;
+    // console.log(data);
+
+    res.status(201).json({
+        success:true,
+        value: data.productName
+    })
+}
+
+export {getProducts, postProduct};
